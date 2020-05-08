@@ -29,4 +29,18 @@ class DataLongsorController extends Controller
             return redirect()->back();
         }
     }
+    public function edit(Request $request, $id)
+    {
+        $data = [
+            'desa' => $request->desa,
+            'kecamatan' => $request->kec,
+            'jumlah_kejadian' => $request->jumk,
+            'tahun' => $request->thn
+        ];
+
+        $simpan = Longsor::where('id', $id)->update($data);
+        if ($simpan) {
+            return redirect()->back();
+        }
+    }
 }
