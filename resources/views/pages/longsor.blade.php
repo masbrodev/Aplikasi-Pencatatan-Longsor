@@ -57,4 +57,48 @@
     </div>
 </div>
 <!-- /.card -->
+
+<div class="modal fade" id="tambah-longsor-modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Tambah Data Longsor</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ URL::to('longsor/tambah')}}" method="post">
+                    @csrf
+
+                    <div class="form-group">
+                        <label>Desa</label>
+                        <input type="text" class="form-control" placeholder="Masukkan Desa" name="desa">
+                    </div>
+                    <div class="form-group">
+                        <label>Kecamatan</label>
+                        <input type="text" class="form-control" placeholder="Masukkan Kecamatan" name="kec">
+                    </div>
+                    <div class="form-group">
+                        <label>Jumha Kejadian</label>
+                        <input type="text" class="form-control" placeholder="Masukkan Jumha Kejadian" name="jumk">
+                    </div>
+                    <div class="form-group">
+                        <label>Tahun</label>
+                        <input type="text" class="form-control" placeholder="Masukkan Tahun" name="thn">
+                    </div>
+
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 @endsection
