@@ -14,4 +14,19 @@ class DataLongsorController extends Controller
         return view('pages/longsor', $data);
         // return $data;
     }
+
+    public function tambah(Request $request)
+    {
+        $data = [
+            'desa' => $request->desa,
+            'kecamatan' => $request->kec,
+            'jumlah_kejadian' => $request->jumk,
+            'tahun' => $request->thn
+        ];
+
+        $simpan = Longsor::create($data);
+        if ($simpan) {
+            return redirect()->back();
+        }
+    }
 }
