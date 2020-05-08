@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'DataLongsorController@index');
+Route::post('/longsor/tambah', 'DataLongsorController@tambah');
+Route::post('/longsor/edit/{id}', 'DataLongsorController@edit');
+Route::get('/longsor/hapus/{id}', 'DataLongsorController@hapus');
