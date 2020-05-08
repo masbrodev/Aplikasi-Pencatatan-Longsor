@@ -43,4 +43,12 @@ class DataLongsorController extends Controller
             return redirect()->back();
         }
     }
+
+    public function hapus($id)
+    {
+        $hapus = Longsor::where('id', $id)->delete();
+        if ($hapus) {
+            return redirect()->back();
+        }
+    }
 }
