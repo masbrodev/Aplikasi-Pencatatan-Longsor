@@ -2,6 +2,7 @@
 
 ## Instalasi
 
+
 Menggunakan package manager [composer](https://getcomposer.org/) untuk menginstal Laravel.
 
 ```bash
