@@ -227,7 +227,7 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile BPBD ',
+            'text' => 'profile BPBD Probolinggo',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
