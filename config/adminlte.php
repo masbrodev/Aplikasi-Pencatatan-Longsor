@@ -227,7 +227,7 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
+            'text' => 'profile BPBD ',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
