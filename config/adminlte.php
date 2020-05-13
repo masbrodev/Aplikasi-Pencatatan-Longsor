@@ -2,6 +2,8 @@
 
 return [
 
+
+    
     /*
     |--------------------------------------------------------------------------
     | Title
@@ -228,7 +230,7 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'profile BPBD Pro',
-            'url'  => 'admin/settings',
+            'url'  => 'profil',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -237,7 +239,7 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'    => 'multilevel',
+            'text'    => 'list kecamatan',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
@@ -402,3 +404,5 @@ return [
         ],
     ],
 ];
+
+
