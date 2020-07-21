@@ -11,7 +11,7 @@ class DataLongsorController extends Controller
     public function index(Request $request)
     {
         $data['longsor'] = Longsor::get();
-        return view('pages/longsor', $data);
+        return view('pages.longsor', $data);
         // return $data;
     }
 
