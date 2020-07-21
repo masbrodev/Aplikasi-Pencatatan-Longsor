@@ -13,8 +13,9 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
-    ];
+        'App\Outlet' => 'App\Policies\OutletPolicy',
+        'App\Model'  => 'App\Policies\ModelPolicy',
+        ];
 
     /**
      * Register any authentication / authorization services.
@@ -24,7 +25,9 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-        //
+        
+        Gate::define('manage_outlet', function () {
+            return auth()->check();
+        });
     }
 }
