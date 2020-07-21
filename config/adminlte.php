@@ -249,6 +249,24 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
 
+        ['header' => 'Peta dan Data Kejadian'],
+        [
+            'text' => 'Peta',
+            'icon' => 'fas fa-fw fa-credit-card',
+            'submenu' => [
+                [
+                    'text' => 'Tambah',
+                    'url'  => 'outlets/create',
+                    'icon' => 'fas fa-fw fa-plus-square',
+                ],
+                [
+                    'text' => 'list',
+                    'url'  => 'outlets',
+                    'icon' => 'fas fa-fw fa-plus-square',
+                ],
+            ],
+        ],
+
     ],
 
     /*
