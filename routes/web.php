@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::resource('outlets', 'OutletController');
+Route::get('logout', 'Auth\LoginController@logout');
+Route::get('/our_outlets', 'OutletMapController@index')->name('outlet_map.index');
+
 Route::get('/longsor', 'DataLongsorController@index');
 Route::get('/login', 'AuthController@login');
 Route::post('/longsor/tambah', 'DataLongsorController@tambah');
