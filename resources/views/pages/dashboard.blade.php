@@ -5,7 +5,5 @@
 @stop
 
 @section('content')
-
-
-
+<p>isi</p>
 @endsection
