@@ -2,6 +2,8 @@
 
 return [
 
+
+    
     /*
     |--------------------------------------------------------------------------
     | Title
@@ -227,8 +229,8 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Data Longsor',
+            'url'  => 'longsor',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
@@ -237,7 +239,7 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'    => 'multilevel',
+            'text'    => 'list kecamatan',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
@@ -402,3 +404,5 @@ return [
         ],
     ],
 ];
+
+
