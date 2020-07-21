@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
 
 Route::get('/longsor', 'DataLongsorController@index');
 Route::get('/login', 'AuthController@login');

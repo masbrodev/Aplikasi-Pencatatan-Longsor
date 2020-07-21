@@ -243,6 +243,11 @@ return [
             'url'  => 'peta',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        [
+            'text' => 'Keluar',
+            'url'  => 'logout',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
 
     ],
 
