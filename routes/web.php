@@ -13,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', 'DataLongsorController@index');
+Route::get('/longsor', 'DataLongsorController@index');
 Route::get('/login', 'AuthController@login');
 Route::post('/longsor/tambah', 'DataLongsorController@tambah');
 Route::post('/longsor/edit/{id}', 'DataLongsorController@edit');
 Route::get('/longsor/hapus/{id}', 'DataLongsorController@hapus');
 
 
-Route::get('/h', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+Route::get('/kecamatan', 'KecamatanController@index');
+Route::get('/kerusakan', 'KerusakanController@index');
+Route::get('/peta', 'PetaController@index');
