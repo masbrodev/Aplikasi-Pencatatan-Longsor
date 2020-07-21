@@ -14,7 +14,7 @@ class AddRelation extends Migration
     public function up()
     {
         Schema::table('kerusakan', function (Blueprint $table) {
-            $table->string('kecamatan_id')->unsigned();
+            $table->integer('kecamatan_id')->unsigned();
             $table->foreign('kecamatan_id')->references('id')->on('kecamatan');
     });
     }
