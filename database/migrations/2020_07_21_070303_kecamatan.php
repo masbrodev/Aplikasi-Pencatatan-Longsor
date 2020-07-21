@@ -16,7 +16,6 @@ class Kecamatan extends Migration
         Schema::create('kecamatan', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('nama_kecamatan');
-            $table->timestamps();
         });
     
     
