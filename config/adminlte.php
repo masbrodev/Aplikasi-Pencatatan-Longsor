@@ -229,8 +229,8 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile BPBD Pro',
-            'url'  => 'profil',
+            'text' => 'Data Longsor',
+            'url'  => 'longsor',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
