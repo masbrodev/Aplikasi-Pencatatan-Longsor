@@ -18,3 +18,6 @@ Route::get('/login', 'AuthController@login');
 Route::post('/longsor/tambah', 'DataLongsorController@tambah');
 Route::post('/longsor/edit/{id}', 'DataLongsorController@edit');
 Route::get('/longsor/hapus/{id}', 'DataLongsorController@hapus');
+
+
+Route::get('/h', 'HomeController@index');
