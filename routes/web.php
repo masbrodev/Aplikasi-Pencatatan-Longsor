@@ -13,16 +13,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout');
 
 Route::resource('outlets', 'OutletController');
-Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/our_outlets', 'OutletMapController@index')->name('outlet_map.index');
 
-Route::get('/longsor', 'DataLongsorController@index');
-Route::get('/login', 'AuthController@login');
-Route::post('/longsor/tambah', 'DataLongsorController@tambah');
-Route::post('/longsor/edit/{id}', 'DataLongsorController@edit');
-Route::get('/longsor/hapus/{id}', 'DataLongsorController@hapus');
+Route::group(['prefix' => 'longsor', 'middleware' => 'auth'], function () {
+    Route::get('/', 'DataLongsorController@index');
+    Route::post('tambah', 'DataLongsorController@tambah');
+    Route::post('edit/{id}', 'DataLongsorController@edit');
+    Route::get('hapus/{id}', 'DataLongsorController@hapus');
+});
 
 
 Route::get('/', 'HomeController@index');
