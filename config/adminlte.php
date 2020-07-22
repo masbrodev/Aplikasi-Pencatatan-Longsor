@@ -229,13 +229,13 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'List Kecamatan',
-            'url'  => 'kecamatan',
+            'text' => 'Data Kerusakan',
+            'url'  => 'kerusakan',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'Data Kerusakan',
-            'url'  => 'kerusakan',
+            'text' => 'Data Kecamatan',
+            'url'  => 'kecamatan',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
