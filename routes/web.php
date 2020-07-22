@@ -25,6 +25,12 @@ Route::group(['prefix' => 'longsor', 'middleware' => 'auth'], function () {
     Route::get('hapus/{id}', 'DataLongsorController@hapus');
 });
 
+Route::group(['prefix' => 'kerusakan', 'middleware' => 'auth'], function () {
+    Route::get('/', 'KerusakanController@index');
+    Route::post('tambah', 'KerusakanController@tambah');
+    Route::post('edit/{id}', 'KerusakanController@edit');
+    Route::get('hapus/{id}', 'KerusakanController@hapus');
+});
 
 Route::get('/', 'HomeController@index');
 Route::get('/kecamatan', 'KecamatanController@index');
