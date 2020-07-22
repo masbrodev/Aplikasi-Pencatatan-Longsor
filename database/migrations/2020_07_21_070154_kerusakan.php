@@ -15,9 +15,10 @@ class Kerusakan extends Migration
     {
         Schema::create('kerusakan', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('ketinggian');
-            $table->integer('tekanan_udara');
-            $table->integer('jumlah_kejadian');
+            $table->string('kecamatan');
+            $table->string('kelurahan');
+            $table->string('jenis_kerusakan');
+            $table->string('penyebab');
             $table->integer('jumlah_kerusakan');
             $table->timestamps();
         });
