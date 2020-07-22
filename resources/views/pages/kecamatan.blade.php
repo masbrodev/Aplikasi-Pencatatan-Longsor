@@ -41,6 +41,8 @@
         <div class="form-group">
             <label for="my-input">Kelurahan</label>
             <select name="kelurahan" class="form-control kelurahan" id="kelurahan">
+            </select>
+
         </div>
     </div>
 </div>
@@ -78,7 +80,7 @@
                 dataType: "JSON",
                 success: function (data) {
                     for (var index = 0; index < data['kota_kabupaten'].length; index++) {
-                        tag += '<option value="' + data['kota_kabupaten'][index].id + '">' + data['kota_kabupaten'][index].nama + '</option>';
+                        tag += '<option value="' + data['kota_kabupaten'][index].id + '">' + data['kota_kabupaten'][index].nama + data['kota_kabupaten'][index].id +'</option>';
                         // id += [data['data'][index].id];
 
                     }
