@@ -8,5 +8,5 @@ class Kerusakan extends Model
 {
     protected $table = 'kerusakan';
     protected $primaryKey = 'id';
-    protected $fillable = ['nama_kecamatan'];
+    protected $fillable = ['kecamatan', 'kelurahan', 'jenis_kerusakan', 'penyebab', 'jumlah_kerusakan'];
 }
