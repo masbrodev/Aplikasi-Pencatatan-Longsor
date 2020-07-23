@@ -7,45 +7,35 @@
 @section('content')
 
 
-    <h5 class="mt-3">Data Kecamatan</h5>
-    <div class="row">
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="provinsi">Provinsi</label>
-            <select name="provinsi" class="form-control provinsi" id="provinsi">
+            <h5 class="mt-3">Data Kecamatan & Kelurahan Kabupaten Probolonggo</h5>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="my-input">Kecamatan</label>
+                        <select name="kecamatan" class="form-control kecamatan" id="kecamatan">
 
-            </select>
-        </div>
-    </div>
-    <br>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="my-input">Kabupaten</label>
-            <select name="kabupaten" class="form-control kabupaten" id="kabupaten">
+                        </select>
+                    </div>
+                </div>
+            </div>  
 
-            </select>
-        </div>
-    </div>
-</div>
-<br>
-<div class="row">
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="my-input">Kecamatan</label>
-            <select name="kecamatan" class="form-control kecamatan" id="kecamatan">
-
-            </select>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="my-input">Kelurahan</label>
-            <select name="kelurahan" class="form-control kelurahan" id="kelurahan">
-            </select>
-
-        </div>
-    </div>
-</div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Kelurahan</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Nama Kelurahan</th>
+                    </tr>
+                  </thead>
+                 <tbody id="kelurahan" name="kelurahan" class="kelurahan" >
+                </tbody>
+            </table>
+            </div>
 @endsection
 
 @push('js')
@@ -58,53 +48,18 @@
         // var id = [];
         $.ajax({
             type: "GET",
-            url: "http://dev.farizdotid.com/api/daerahindonesia/provinsi",
+            url: "https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=3513",
             dataType: "JSON",
             success: function (data) {
-                for (var index = 0; index < data['provinsi'].length; index++) {
-                    tag += '<option value="' + data['provinsi'][index].id + '">' + data['provinsi'][index].nama + '</option>';
-                    // id += [data['data'][index].id];
+                for (var index = 0; index < data['kecamatan'].length; index++) {
+                    tag += '<option value="' + data['kecamatan'][index].id + '" myTag= "'+data['kecamatan'][index].id+'">' + data['kecamatan'][index].nama + '</option>';
+
 
                 }
-                $('.provinsi').html(tag);
+                $('.kecamatan').html(tag);
             }
         });
-        $('.provinsi').click(function () {
-            var tag = '';
-            id = $('#provinsi').val();
-            $.ajax({
-                type: "GET",
-                url: "https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=" + id,
-                dataType: "JSON",
-                success: function (data) {
-                    for (var index = 0; index < data['kota_kabupaten'].length; index++) {
-                        tag += '<option value="' + data['kota_kabupaten'][index].id + '">' + data['kota_kabupaten'][index].nama + data['kota_kabupaten'][index].id +'</option>';
-                        // id += [data['data'][index].id];
-
-                    }
-                    $('.kabupaten').html(tag);
-
-                }
-            });
-        });
-        $('.kabupaten').click(function () {
-            var tag = '';
-            id = $('#kabupaten').val();
-            $.ajax({
-                type: "GET",
-                url: "https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=" + id,
-                dataType: "JSON",
-                success: function (data) {
-                    for (var index = 0; index < data['kecamatan'].length; index++) {
-                        tag += '<option value="' + data['kecamatan'][index].id + '">' + data['kecamatan'][index].nama + '</option>';
-                        // id += [data['data'][index].id];
-
-                    }
-                    $('.kecamatan').html(tag);
-
-                }
-            });
-        });
+       
         $('.kecamatan').click(function () {
             var tag = '';
             id = $('#kecamatan').val();
@@ -113,8 +68,12 @@
                 url: "https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan=" + id,
                 dataType: "JSON",
                 success: function (data) {
+                    // tag +='<h1>qwertyuio</h1>'
                     for (var index = 0; index < data['kelurahan'].length; index++) {
-                        tag += '<option value="' + data['kelurahan'][index].id + '">' + data['kelurahan'][index].nama + '</option>';
+                    num = 1 + index;
+
+                        // tag += '<option value="' + data['kelurahan'][index].id + '">' + data['kelurahan'][index].nama + '</option>';
+                        tag += '<tr><td>' + num + '</td><td>' + data['kelurahan'][index].nama + '</td></tr>';
                         // id += [data['data'][index].id];
 
                     }
