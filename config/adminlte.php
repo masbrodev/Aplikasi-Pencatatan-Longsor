@@ -226,45 +226,40 @@ return [
         [
             'text' => 'Data Longsor',
             'url'  => 'longsor',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa fa-gg',
         ],
         [
             'text' => 'Data Kerusakan',
             'url'  => 'kerusakan',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-free-code-camp',
         ],
         [
             'text' => 'Data Kecamatan',
             'url'  => 'kecamatan',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-search-plus',
         ],
-        [
-            'text' => 'Peta',
-            'url'  => 'peta',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Keluar',
-            'url'  => 'logout',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-
         ['header' => 'Peta dan Data Kejadian'],
         [
             'text' => 'Peta',
-            'icon' => 'fas fa-fw fa-credit-card',
-            'submenu' => [
-                [
-                    'text' => 'Tambah',
-                    'url'  => 'outlets/create',
-                    'icon' => 'fas fa-fw fa-plus-square',
-                ],
-                [
-                    'text' => 'list',
-                    'url'  => 'outlets',
-                    'icon' => 'fas fa-fw fa-plus-square',
-                ],
-            ],
+            'url'  => 'peta',
+            'icon' => 'fa fa-map-o',
+        ],
+        [
+            'text' => 'Tambah',
+            'url'  => 'outlets/create',
+            'icon' => 'fa fa-map-marker',
+        ],
+        [
+            'text' => 'list',
+            'url'  => 'outlets',
+            'icon' => 'fas fa-fw fa-plus-square',
+        ],
+          
+        ['header' => ''],
+        [
+            'text' => 'Keluar',
+            'url'  => 'logout',
+            'icon' => 'fa fa-reply',
         ],
 
     ],
