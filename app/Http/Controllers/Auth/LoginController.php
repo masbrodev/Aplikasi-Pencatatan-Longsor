@@ -50,11 +50,14 @@ class LoginController extends Controller
         $credential = $request->only('email', 'password');
 
         if (Auth::attempt($credential)) {
-            return redirect('/');
+            return redirect('/home');
+        }
+        return redirect()->back()->withErrors([
+            'email' => 'Username tidak Cocok, periksa kembali data login anda',
+            'password' => 'Password tidak Cocok, periksa kembali data login anda',
+            ]);
         }
 
-        return redirect()->back()->with('loginError', 'Login error, periksa kembali data login anda');
-    }
 
 
     public function logout(Request $request)
