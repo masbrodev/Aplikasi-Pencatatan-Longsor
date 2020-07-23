@@ -1,13 +1,12 @@
 @extends('layouts.main')
 
 @section('content_header')
-<h1>Kecamatan</h1>
+<h1>Data Kecamatan & Kelurahan Kabupaten Probolonggo</h1>
 @stop
 
 @section('content')
 
 
-            <h5 class="mt-3">Data Kecamatan & Kelurahan Kabupaten Probolonggo</h5>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
