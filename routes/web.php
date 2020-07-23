@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-Route::get('logout', 'Auth\LoginController@logout');
-
-Route::resource('outlets', 'OutletController');
-Route::get('/our_outlets', 'OutletMapController@index')->name('outlet_map.index');
 
 Route::group(['prefix' => 'longsor', 'middleware' => 'auth'], function () {
     Route::get('/', 'DataLongsorController@index');
@@ -33,6 +29,14 @@ Route::group(['prefix' => 'kerusakan', 'middleware' => 'auth'], function () {
 });
 
 Route::get('/', 'HomeController@index');
-Route::get('/kecamatan', 'KecamatanController@index');
-Route::get('/kerusakan', 'KerusakanController@index');
-Route::get('/peta', 'PetaController@index');
+
+Route::group(['middleware' => ['auth']], function () { 
+    Route::get('/home', 'HomeController@index');
+    Route::get('/kecamatan', 'KecamatanController@index');
+    Route::get('/kerusakan', 'KerusakanController@index');
+    Route::get('/peta', 'PetaController@index');   
+    Route::get('logout', 'Auth\LoginController@logout');
+    Route::resource('outlets', 'OutletController');
+    Route::get('/our_outlets', 'OutletMapController@index')->name('outlet_map.index');
+});
+
