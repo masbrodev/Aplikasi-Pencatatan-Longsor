@@ -211,84 +211,57 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
-        [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Dashboard',
+            'url'         => '/',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Data'],
         [
             'text' => 'Data Longsor',
             'url'  => 'longsor',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa fa-gg',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Data Kerusakan',
+            'url'  => 'kerusakan',
+            'icon' => 'fa fa-free-code-camp',
         ],
         [
-            'text'    => 'list kecamatan',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            'text' => 'Data Kecamatan',
+            'url'  => 'kecamatan',
+            'icon' => 'fa fa-search-plus',
         ],
-        ['header' => 'labels'],
+        ['header' => 'Peta dan Data Kejadian'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
+            'text' => 'Peta',
+            'url'  => 'peta',
+            'icon' => 'fa fa-map-o',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
+            'text' => 'Tambah',
+            'url'  => 'outlets/create',
+            'icon' => 'fa fa-map-marker',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
+            'text' => 'list',
+            'url'  => 'outlets',
+            'icon' => 'fas fa-fw fa-plus-square',
         ],
+          
+        ['header' => ''],
+        [
+            'text' => 'Keluar',
+            'url'  => 'logout',
+            'icon' => 'fa fa-reply',
+        ],
+
     ],
 
     /*

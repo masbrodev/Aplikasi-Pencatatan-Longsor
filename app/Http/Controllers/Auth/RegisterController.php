@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request; 
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -51,7 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:5'],
         ]);
     }
 
@@ -66,7 +68,39 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => $data['password'],
         ]);
+    }
+
+        public function showRegistrationForm()
+    {
+        return view('auth/register');
+    }
+
+    
+    public function register(Request $request)
+    {
+        $data = [
+            'name' => $request->name,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'email' => $request->email,
+        ];
+
+        if ($this->validator($data)->fails()) {
+            return redirect()
+                ->back()
+                ->with('registerError', 'Register Error. Pastikan data anda sudah benar')
+                ->withErrors($this->validator($data))
+                ->withInput();
+        }
+
+        $simpan = $this->create($data);
+        if ($simpan) {
+            $credential = $request->only('username','password');
+            if (Auth::attempt($credential)) {
+                return redirect('/');
+            }
+        }
     }
 }

@@ -12,12 +12,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout');
 
-Route::get('/', 'DataLongsorController@index');
-Route::get('/login', 'AuthController@login');
-Route::post('/longsor/tambah', 'DataLongsorController@tambah');
-Route::post('/longsor/edit/{id}', 'DataLongsorController@edit');
-Route::get('/longsor/hapus/{id}', 'DataLongsorController@hapus');
+Route::resource('outlets', 'OutletController');
+Route::get('/our_outlets', 'OutletMapController@index')->name('outlet_map.index');
 
+Route::group(['prefix' => 'longsor', 'middleware' => 'auth'], function () {
+    Route::get('/', 'DataLongsorController@index');
+    Route::post('tambah', 'DataLongsorController@tambah');
+    Route::post('edit/{id}', 'DataLongsorController@edit');
+    Route::get('hapus/{id}', 'DataLongsorController@hapus');
+});
 
-Route::get('/h', 'HomeController@index');
+Route::group(['prefix' => 'kerusakan', 'middleware' => 'auth'], function () {
+    Route::get('/', 'KerusakanController@index');
+    Route::post('tambah', 'KerusakanController@tambah');
+    Route::post('edit/{id}', 'KerusakanController@edit');
+    Route::get('hapus/{id}', 'KerusakanController@hapus');
+});
+
+Route::get('/', 'HomeController@index');
+Route::get('/kecamatan', 'KecamatanController@index');
+Route::get('/kerusakan', 'KerusakanController@index');
+Route::get('/peta', 'PetaController@index');

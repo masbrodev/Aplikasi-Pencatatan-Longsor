@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Providers\RouteServiceProvider;
 
 class LoginController extends Controller
 {
@@ -35,5 +38,28 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth/login');
+    }
+
+    public function login(Request $request)
+    {
+        $credential = $request->only('email', 'password');
+
+        if (Auth::attempt($credential)) {
+            return redirect('/');
+        }
+
+        return redirect()->back()->with('loginError', 'Login error, periksa kembali data login anda');
+    }
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('/login');
     }
 }
