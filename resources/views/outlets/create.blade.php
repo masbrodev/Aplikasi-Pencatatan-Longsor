@@ -50,6 +50,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
     integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
     crossorigin=""/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 
 <style>
     #mapid { height: 300px; }
@@ -83,7 +84,10 @@
         $('#latitude').val(latitude);
         $('#longitude').val(longitude);
         updateMarker(latitude, longitude);
-    });
+
+        var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + latitude +","+ longitude;
+        console.log(url);
+        });
 
     var updateMarkerByInputs = function() {
         return updateMarker( $('#latitude').val() , $('#longitude').val());
