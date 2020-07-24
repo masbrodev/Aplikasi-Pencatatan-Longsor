@@ -71,7 +71,7 @@
 
                         </select>
                     <div class="form-group">
-                        <label>Kecamatan</label>
+                        <label>Kelurahan</label>
                         <select name="kelurahan" class="form-control kelurahan" id="kelurahan">
                         </select>
 
@@ -121,12 +121,10 @@ $u = 1;
 
                         <label for="my-input">Kecamatan</label>
                         <select name="kecamatan" class="form-control kecamatan" id="kecamatan">
-                        <option data-val="first" value="1">One</option>
                         </select>
                     <div class="form-group">
-                        <label>Kecamatan</label>
+                        <label>Kelurahan</label>
                         <select name="kelurahan" class="form-control kelurahan" id="kelurahan">
-                        <option>{{ $r->kelurahan}}</option>
                         </select>
 
                     </div>
