@@ -31,7 +31,7 @@ Route::group(['prefix' => 'kerusakan', 'middleware' => 'auth'], function () {
 Route::get('/', 'HomeController@index');
 
 Route::group(['middleware' => ['auth']], function () { 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/home', 'HomeController@home');
     Route::get('/kecamatan', 'KecamatanController@index');
     Route::get('/kerusakan', 'KerusakanController@index');
     Route::get('/peta', 'PetaController@index');   
