@@ -3,7 +3,7 @@
 return [
 
 
-    
+
     /*
     |--------------------------------------------------------------------------
     | Title
@@ -107,7 +107,7 @@ return [
     'classes_brand_text' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-dark-olive elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand-md',
@@ -217,10 +217,8 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'url'         => '/',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'url'         => 'home',
+            'icon'        => 'fa fa-tachometer',
         ],
         ['header' => 'Data'],
         [
@@ -254,7 +252,7 @@ return [
             'url'  => 'outlets',
             'icon' => 'fas fa-fw fa-plus-square',
         ],
-          
+
         ['header' => ''],
         [
             'text' => 'Keluar',
@@ -377,5 +375,3 @@ return [
         ],
     ],
 ];
-
-
