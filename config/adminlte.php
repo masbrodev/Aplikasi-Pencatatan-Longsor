@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'title' => 'Webgis Pemetaan Longsor',
+    'title' => 'Webgis Pemetaan Longsor Kabupaten Probolinggo',
     'title_prefix' => '',
     'title_postfix' => '',
 

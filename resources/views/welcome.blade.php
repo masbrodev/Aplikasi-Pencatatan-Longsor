@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Webgis Pemetaan Longsor Kabupaten Probolinggo</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -55,7 +55,9 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
+                <center>
                   Aplikasi Webgis Pemetaan Longsor Kabupaten Probolinggo
+                </center>
                 </h3>
               </div>
               <!-- /.card-header -->
