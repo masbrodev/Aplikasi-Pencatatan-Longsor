@@ -118,12 +118,12 @@ $u = 1;
                     @csrf
                     <div class="form-group">
                         <label for="my-input">Kecamatan</label>
-                        <select name="kec" class="form-control kecamatan" id="kecamatan">
+                        <select name="kec" class="form-control kecamatanEdit" id="kecamatanEdit">
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Kelurahan</label>
-                        <select name="desa" class="form-control kelurahan" id="kelurahan">
+                        <select name="desa" class="form-control kelurahanEdit" id="kelurahanEdit">
                         </select>
                     </div>
                     <div class="form-group">
