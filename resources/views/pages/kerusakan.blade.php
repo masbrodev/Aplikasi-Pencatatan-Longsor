@@ -123,7 +123,7 @@ $u = 1;
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Kelurahan E</label>
+                        <label>Kelurahan</label>
                         <select name="kelurahan" class="form-control kelurahanEdit" id="kelurahanEdit">
                         </select>
                     </div>
