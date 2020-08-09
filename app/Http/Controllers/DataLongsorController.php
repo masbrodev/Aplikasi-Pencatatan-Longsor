@@ -10,7 +10,7 @@ class DataLongsorController extends Controller
 {
     public function index(Request $request)
     {
-        $data['longsor'] = Longsor::get();
+        $data['longsor'] = Longsor::orderBy('created_at', 'DESC')->get();
         return view('pages.longsor', $data);
         // return $data;
     }
