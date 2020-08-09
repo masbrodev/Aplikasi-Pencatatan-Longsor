@@ -9,7 +9,7 @@ class KerusakanController extends Controller
 {
     public function index(Request $request)
     {
-        $data['kerusakan'] = Kerusakan::get();
+        $data['kerusakan'] = Kerusakan::orderBy('created_at', 'DESC')->get();
         return view('pages.kerusakan', $data);
         // return $data;
     }
