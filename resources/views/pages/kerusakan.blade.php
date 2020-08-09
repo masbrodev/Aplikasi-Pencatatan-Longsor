@@ -98,9 +98,7 @@
 
             </div>
         </div>
-        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
 </div>
 
 @php
@@ -121,12 +119,12 @@ $u = 1;
                     @csrf
                     <div class="form-group">
                         <label for="my-input">Kecamatan</label>
-                        <select name="kecamatan" class="form-control kecamatan" id="kecamatan">
+                        <select name="kecamatan" class="form-control kecamatanEdit" id="kecamatanEdit">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Kelurahan</label>
-                        <select name="kelurahan" class="form-control kelurahan" id="kelurahan">
+                        <label>Kelurahan E</label>
+                        <select name="kelurahan" class="form-control kelurahanEdit" id="kelurahanEdit">
                         </select>
                     </div>
                     <div class="form-group">
@@ -259,6 +257,50 @@ $u = 1;
 
                     }
                     $('.kelurahan').html(tag);
+
+                }
+            });
+        })
+    }
+
+    api_provinsiEdit();
+
+    function api_provinsiEdit() {
+        var tag = '';
+        // var id = [];
+        $.ajax({
+            type: "GET",
+            url: "https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=3513",
+            dataType: "JSON",
+            success: function(data) {
+                for (var index = 0; index < data['kecamatan'].length; index++) {
+                    tag += '<option value="' + data['kecamatan'][index].nama + '" myTagE= "' + data['kecamatan'][index].id + '">' + data['kecamatan'][index].nama + '</option>';
+                    // id += [data['kecamatan'][index].id];
+
+                    // console.log(id);
+
+                }
+                $('.kecamatanEdit').html(tag);
+            }
+        });
+        $('.kecamatanEdit').click(function() {
+            var tag = '';
+            id = $('#kecamatanEdit option:selected').attr("myTagE");
+            bug = $('#kecamatanEdit').val();
+
+            console.log(bug);
+
+            $.ajax({
+                type: "GET",
+                url: "https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan=" + id,
+                dataType: "JSON",
+                success: function(data) {
+                    for (var index = 0; index < data['kelurahan'].length; index++) {
+                        tag += '<option value="' + data['kelurahan'][index].nama + '">' + data['kelurahan'][index].nama + '</option>';
+                        // id += [data['data'][index].id];
+
+                    }
+                    $('.kelurahanEdit').html(tag);
 
                 }
             });

@@ -254,5 +254,49 @@ $u = 1;
             });
         })
     }
+
+    api_provinsiEdit();
+
+    function api_provinsiEdit() {
+        var tag = '';
+        // var id = [];
+        $.ajax({
+            type: "GET",
+            url: "https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=3513",
+            dataType: "JSON",
+            success: function(data) {
+                for (var index = 0; index < data['kecamatan'].length; index++) {
+                    tag += '<option value="' + data['kecamatan'][index].nama + '" myTagE= "' + data['kecamatan'][index].id + '">' + data['kecamatan'][index].nama + '</option>';
+                    // id += [data['kecamatan'][index].id];
+
+                    // console.log(id);
+
+                }
+                $('.kecamatanEdit').html(tag);
+            }
+        });
+        $('.kecamatanEdit').click(function() {
+            var tag = '';
+            id = $('#kecamatanEdit option:selected').attr("myTagE");
+            // bug = $('#kecamatanEdit').val();
+
+            // console.log(bug);
+
+            $.ajax({
+                type: "GET",
+                url: "https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan=" + id,
+                dataType: "JSON",
+                success: function(data) {
+                    for (var index = 0; index < data['kelurahan'].length; index++) {
+                        tag += '<option value="' + data['kelurahan'][index].nama + '">' + data['kelurahan'][index].nama + '</option>';
+                        // id += [data['data'][index].id];
+
+                    }
+                    $('.kelurahanEdit').html(tag);
+
+                }
+            });
+        })
+    }
 </script>
 @endpush
